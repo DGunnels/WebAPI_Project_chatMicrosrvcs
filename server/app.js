@@ -1,5 +1,9 @@
 'use strict';
-
+var express = require('express');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+var authJwtController = require('./auth_jwt');
+var User = require('./Users');
 var express = require('express');
 var bodyParser = require('body-parser');
 var passport = require('passport');
@@ -40,7 +44,7 @@ router.route('/signup')
     .all(function (req, res) { });
 
 router.route('/home')
-    .get(function (req, res) { })
+    .get(authJwtController.isAuthenticated, function (req, res) })
     .post(function (req, res) { })
     .put(function (req, res) { })
     .delete(function (req, res) { })
