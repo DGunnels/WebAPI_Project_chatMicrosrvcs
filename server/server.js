@@ -1,7 +1,4 @@
-'use strict';
-var express = require('express');
-var bodyParser = require('body-parser');
-var passport = require('passport');
+
 var authJwtController = require('./auth_jwt');
 var User = require('./Users');
 var express = require('express');
