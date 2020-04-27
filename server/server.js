@@ -11,14 +11,14 @@ var cors = require('cors');
 var jwt = require('jsonwebtoken');
 
 
-var app = express();
-module.exports = app;
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+var server = express();
+module.exports = server;
+server.use(cors());
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: false }));
 
 
-app.use(passport.initialize());
+server.use(passport.initialize());
 
 var router = express.Router();
 
@@ -50,5 +50,5 @@ router.route('/home')
     .delete(function (req, res) { })
     .all(function (req, res) { });
 
-app.use('/', router);
-app.listen(process.env.PORT || 8080);
+server.use('/', router);
+server.listen(process.env.PORT || 8080);

@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
-
 mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env.DB, { useNewUrlParser: true } );
@@ -9,9 +8,10 @@ mongoose.set('useCreateIndex', true);
 
 // user schema
 var UserSchema = new Schema({
-    name: String,
-    username: { type: String, required: true, index: { unique: true }},
-    password: { type: String, required: true, select: false }
+    id: { type: String, required: true, index: { unique: true }},
+    password: { type: String, required: true, select: false },
+    name: { type: String, required: true  },
+    image: {type: String}
 });
 
 // hash the password before the user is saved
@@ -40,4 +40,4 @@ UserSchema.methods.comparePassword = function(password, callback) {
 };
 
 // return the model
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('chatClient', ChatClientSchema);
