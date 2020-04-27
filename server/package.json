@@ -1,0 +1,9 @@
+{
+  "name": "web-api-project-backend",
+  "version": "0.0.0",
+  "description": "WebAPI Project Backend",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
