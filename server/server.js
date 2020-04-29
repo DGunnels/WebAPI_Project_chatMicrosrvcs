@@ -8,6 +8,25 @@ var cors = require('cors');
 var jwt = require('jsonwebtoken');
 
 
+function getJSONObject(req, message, status) {
+    var json = {
+        status: status,
+        message: message,
+        headers : "No Headers",
+        env: process.env.UNIQUE_KEY,
+        body : "No Body"
+    };
+
+    if (req.body != null) {
+        json.body = req.body;
+    }
+    if (req.headers != null) {
+        json.headers = req.headers;
+    }
+
+    return json;
+}
+
 var server = express();
 module.exports = server;
 server.use(cors());
@@ -40,8 +59,20 @@ router.route('/signup')
     .delete(function (req, res) { })
     .all(function (req, res) { });
 
-router.route('/home')
-    .get(authJwtController.isAuthenticated, function (req, res) })
+router.route('/home:userId')
+    .get(authJwtController.isAuthenticated, function (req, res)
+    {
+        var id = req.params.userId;
+        User.findById(id, function(err, user) {
+            if (err) res.send(err);
+
+            var userJson = JSON.stringify(user);
+            // return that user
+            res.json(user);
+        });
+    })
+
+
     .post(function (req, res) { })
     .put(function (req, res) { })
     .delete(function (req, res) { })
