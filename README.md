@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React Chat](https://github.com/facebook/create-react-server).
+This project was bootstrapped with [Create React ChatApp](https://github.com/facebook/create-react-server).
 
 ## Available Scripts
 
@@ -39,7 +39,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React Chat documentation](https://facebook.github.io/create-react-server/docs/getting-started).
+You can learn more in the [Create React ChatApp documentation](https://facebook.github.io/create-react-server/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
@@ -51,7 +51,7 @@ This section has moved here: https://facebook.github.io/create-react-server/docs
 
 This section has moved here: https://facebook.github.io/create-react-server/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web Chat
+### Making a Progressive Web ChatApp
 
 This section has moved here: https://facebook.github.io/create-react-server/docs/making-a-progressive-web-server
 
