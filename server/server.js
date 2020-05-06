@@ -60,23 +60,16 @@ router.route('/signup')
     .all(function (req, res) { });
 
 router.route('/home:userId')
-    .get(authJwtController.isAuthenticated, function (req, res)
-    {
-        var id = req.params.userId;
-        User.findById(id, function(err, user) {
-            if (err) res.send(err);
-
-            var userJson = JSON.stringify(user);
-            // return that user
-            res.json(user);
-        });
+    .get(authJwtController.isAuthenticated, function (req, res){
     })
 
 
-    .post(function (req, res) { })
-    .put(function (req, res) { })
-    .delete(function (req, res) { })
-    .all(function (req, res) { });
+    .post(authJwtController.isAuthenticated, function (req, res) {
+
+    })
+    .put(authJwtController.isAuthenticated, function (req, res) { })
+    .delete(authJwtController.isAuthenticated, function (req, res) { })
+    .all(authJwtController.isAuthenticated, function (req, res) { });
 
 server.use('/', router);
 server.listen(process.env.PORT || 8080);

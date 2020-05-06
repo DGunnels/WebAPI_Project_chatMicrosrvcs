@@ -24,7 +24,7 @@ const channel = chatClient.channel('livestream', 'webapi', {
 });
 
 const ChatApp = () => (
-    <Chat client={chatClient} theme={'livestream dark'}>
+    <Chat client={chatClient} theme={'livestream light'}>
       <Channel channel={channel} Message={MessageLivestream}>
         <Window hideOnThread>
           <ChannelHeader live />
